@@ -2,6 +2,7 @@
 
 import rclpy
 from geometry_msgs.msg import PoseStamped
+from nav_msgs.msg import Odometry
 from nav2_simple_commander.robot_navigator import BasicNavigator, TaskResult
 
 def send_goal(navigator, x: float, y: float, frame: str = 'map'):
@@ -28,18 +29,46 @@ def send_goal(navigator, x: float, y: float, frame: str = 'map'):
 def main():
     rclpy.init()
     navigator = BasicNavigator()
+    node = navigator  
+
+    def odom_cb(msg: Odometry):
+        node.latest_odom = msg
+    node.create_subscription(Odometry, '/odom', odom_cb, 10)
+
+    while not hasattr(node, 'latest_odom'):
+        rclpy.spin_once(node, timeout_sec=0.1)
+
+    odom = node.latest_odom.pose.pose
+    initial_pose = PoseStamped()
+    initial_pose.header.frame_id = 'map'
+    initial_pose.header.stamp = node.get_clock().now().to_msg()
+    initial_pose.pose.position.x = odom.position.x
+    initial_pose.pose.position.y = odom.position.y
+    initial_pose.pose.position.z = odom.position.z
+    initial_pose.pose.orientation.x = odom.orientation.x
+    initial_pose.pose.orientation.y = odom.orientation.y
+    initial_pose.pose.orientation.z = odom.orientation.z
+    initial_pose.pose.orientation.w = odom.orientation.w
+
+    navigator.setInitialPose(initial_pose)
+
+
+
+
     navigator.waitUntilNav2Active()
 
+ 
     waypoints = [
-        (5.0,   5.0),   # 맵의 북동쪽 코너 근처
-        (10.0,  0.0),   # 맵의 동쪽 중앙
-        (0.0,  10.0),   # 맵의 북쪽 중앙
-        (-10.0, 0.0),   # 맵의 서쪽 중앙
-        (0.0,  -10.0),  # 맵의 남쪽 중앙
+        (5.0,   5.0),   
+        (10.0,  0.0),   
+        (0.0,  10.0),  
+        (-10.0, 0.0),  
+        (0.0,  -10.0), 
     ]
     for x, y in waypoints:
         send_goal(navigator, x, y)
 
+  
     navigator.lifecycleShutdown()
     navigator.destroyNode()
     rclpy.shutdown()

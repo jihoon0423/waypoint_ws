@@ -1,0 +1,24 @@
+[0.323s] Invoking command in '/home/choi/sim_ws/src/waypoint_nav_pkg': PYTHONPATH=/home/choi/sim_ws/build/waypoint_nav_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/choi/sim_ws/install/waypoint_nav_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/waypoint_nav_pkg build --build-base /home/choi/sim_ws/build/waypoint_nav_pkg/build install --record /home/choi/sim_ws/build/waypoint_nav_pkg/install.log --single-version-externally-managed install_data
+[0.446s] running egg_info
+[0.446s] writing ../../build/waypoint_nav_pkg/waypoint_nav_pkg.egg-info/PKG-INFO
+[0.446s] writing dependency_links to ../../build/waypoint_nav_pkg/waypoint_nav_pkg.egg-info/dependency_links.txt
+[0.446s] writing entry points to ../../build/waypoint_nav_pkg/waypoint_nav_pkg.egg-info/entry_points.txt
+[0.446s] writing requirements to ../../build/waypoint_nav_pkg/waypoint_nav_pkg.egg-info/requires.txt
+[0.447s] writing top-level names to ../../build/waypoint_nav_pkg/waypoint_nav_pkg.egg-info/top_level.txt
+[0.447s] reading manifest file '../../build/waypoint_nav_pkg/waypoint_nav_pkg.egg-info/SOURCES.txt'
+[0.448s] writing manifest file '../../build/waypoint_nav_pkg/waypoint_nav_pkg.egg-info/SOURCES.txt'
+[0.448s] running build
+[0.448s] running build_py
+[0.448s] copying waypoint_nav_pkg/go_to_waypoints.py -> /home/choi/sim_ws/build/waypoint_nav_pkg/build/lib/waypoint_nav_pkg
+[0.448s] running install
+[0.448s] running install_lib
+[0.448s] copying /home/choi/sim_ws/build/waypoint_nav_pkg/build/lib/waypoint_nav_pkg/go_to_waypoints.py -> /home/choi/sim_ws/install/waypoint_nav_pkg/lib/python3.10/site-packages/waypoint_nav_pkg
+[0.449s] byte-compiling /home/choi/sim_ws/install/waypoint_nav_pkg/lib/python3.10/site-packages/waypoint_nav_pkg/go_to_waypoints.py to go_to_waypoints.cpython-310.pyc
+[0.449s] running install_data
+[0.449s] running install_egg_info
+[0.450s] removing '/home/choi/sim_ws/install/waypoint_nav_pkg/lib/python3.10/site-packages/waypoint_nav_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[0.450s] Copying ../../build/waypoint_nav_pkg/waypoint_nav_pkg.egg-info to /home/choi/sim_ws/install/waypoint_nav_pkg/lib/python3.10/site-packages/waypoint_nav_pkg-0.0.0-py3.10.egg-info
+[0.450s] running install_scripts
+[0.461s] Installing go_to_waypoints script to /home/choi/sim_ws/install/waypoint_nav_pkg/lib/waypoint_nav_pkg
+[0.461s] writing list of installed files to '/home/choi/sim_ws/build/waypoint_nav_pkg/install.log'
+[0.472s] Invoked command in '/home/choi/sim_ws/src/waypoint_nav_pkg' returned '0': PYTHONPATH=/home/choi/sim_ws/build/waypoint_nav_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/choi/sim_ws/install/waypoint_nav_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/waypoint_nav_pkg build --build-base /home/choi/sim_ws/build/waypoint_nav_pkg/build install --record /home/choi/sim_ws/build/waypoint_nav_pkg/install.log --single-version-externally-managed install_data

@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'go_to_waypoints = waypoint_nav_pkg.go_to_waypoints:main',
+            'go_to_waypoints = waypoint_nav_pkg.go_to_waypoints_with_photo:main',
         ],
     },
 )
